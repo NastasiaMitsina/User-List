@@ -1,0 +1,44 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+};
+
+html,
+body {
+  height: 100%;
+};
+
+body {
+  background-color: $lightPurple;
+  width: 100%;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+};
+
+ul {
+  padding: 0;
+  list-style: none;
+};
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+  margin: 0;
+};
+
+img {
+  max-width: 100%;
+  display: block;
+};
+
+input,
+button {
+  font: inherit;
+};

@@ -1,0 +1,132 @@
+@import "../../style/variables";
+
+.search {
+  width: 90%;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & input {
+    width: 70%;
+    font-size: 17px;
+    padding: 6px 0 4px 10px;
+    border: 2px solid $lightPurple;
+    background: $white;
+    border-radius: 8px;
+    color: $darkPurple;
+  };
+};
+
+.btn-reset {
+  background-color: $darkPurple;
+  border: 0 solid $white;
+  padding: 10px 15px;
+  color: $white;
+  font-size: 20px;
+  font-weight: 700;
+  width: 20%;
+  cursor: pointer;
+  transform: rotate(-2deg);
+};
+
+.btn-reset:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+};
+
+.btn-reset:active {
+  color: $darkPurple;
+  background-color: $white;
+};
+
+.btn-reset:hover:after {
+  bottom: 2px;
+  left: 2px;
+};
+
+.loader {
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(165deg);
+};
+
+.loader:before, .loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+};
+
+.loader:before {
+  animation: before8 2s infinite;
+};
+
+.loader:after {
+  animation: after6 2s infinite;
+};
+
+@keyframes before8 {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+  }
+
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+
+  100% {
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+}
+
+@keyframes after6 {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+  }
+
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+  }
+
+  100% {
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 1.25em);
+  left: calc(50% - 1.25em);
+};
+
+@media (max-width: 768px) {
+  .btn-reset {
+    font-size: 16px;
+  };
+};
